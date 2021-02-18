@@ -1,3 +1,5 @@
+// VALUE OF LAST SAVED TIME
+var lastSavedTime = moment().format("hh:mm a")
 // SWITCH STRING VARIABLE TO NUMBER, WILL BE USED TO DETERMINE PAST, PRESENT, FUTURE
 var m = moment().format("1." + "HHmm")
 m = parseFloat(m)
@@ -5,6 +7,16 @@ m = parseFloat(m)
 $(document).ready(function(){
   // SHOW CURRENT DATE
   $('#currentDay').text(moment().format("ddd MM DD YYYY"));
+  // PREVIOUSLY SAVED TEXTS ON LOCAL STORAGE WILL APPEAR
+  $('#9am').val(localStorage.getItem('9am'))
+  $('#10am').val(localStorage.getItem('10am'))
+  $('#11am').val(localStorage.getItem('11am'))
+  $('#12pm').val(localStorage.getItem('12pm'))
+  $('#1pm').val(localStorage.getItem('1pm'))
+  $('#2pm').val(localStorage.getItem('2pm'))
+  $('#3pm').val(localStorage.getItem('3pm'))
+  $('#4pm').val(localStorage.getItem('4pm'))
+  $('#5pm').val(localStorage.getItem('5pm'))
   // SETTING PAST, PRESENT, & FUTURE BACKGROUND COLORS
   if (m < 1.09) {
     $('#9am').addClass('future');
@@ -77,4 +89,49 @@ $(document).ready(function(){
     } else {
       $('#5pm').addClass('present');
     }; 
+  // SAVE TEXT ENTRIES TO LOCAL STORAGE
+  $('#t9').click(function() {
+    localStorage.setItem('9am', document.getElementById('9am').value)
+    localStorage.setItem('last saved at', lastSavedTime);
+  })
+
+  $('#t10').click(function() {
+    localStorage.setItem('10am', document.getElementById('10am').value)
+    localStorage.setItem('last saved at', lastSavedTime);
+  })
+
+  $('#t11').click(function() {
+    localStorage.setItem('11am', document.getElementById('11am').value)
+    localStorage.setItem('last saved at', lastSavedTime);
+  })
+
+  $('#t12').click(function() {
+    localStorage.setItem('12pm', document.getElementById('12pm').value)
+    localStorage.setItem('last saved at', lastSavedTime);
+  })
+
+  $('#t13').click(function() {
+    localStorage.setItem('1pm', document.getElementById('1pm').value)
+    localStorage.setItem('last saved at', lastSavedTime);
+  })
+
+  $('#t14').click(function() {
+    localStorage.setItem('2pm', document.getElementById('2pm').value)
+    localStorage.setItem('last saved at', lastSavedTime);
+  })
+
+  $('#t15').click(function() {
+    localStorage.setItem('3pm', document.getElementById('3pm').value)
+    localStorage.setItem('last saved at', lastSavedTime);
+  })
+
+  $('#t16').click(function() {
+    localStorage.setItem('4pm', document.getElementById('1pm').value)
+    localStorage.setItem('last saved at', lastSavedTime);
+  })
+
+  $('#t17').click(function() {
+    localStorage.setItem('5pm', txt17.value)
+    localStorage.setItem('last saved at', lastSavedTime);
+  })
 })
